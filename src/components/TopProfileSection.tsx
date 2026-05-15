@@ -3,7 +3,7 @@ const TopProfileSection = () => {
     <div className="flex flex-col items-center gap-6 self-stretch">
       <div className="w-16 h-16">
         <img
-          src="/img/profile.png"
+          src="/profile.png"
           className="w-16 h-16 object-cover"
           loading="lazy"
           alt="Portrait of Sarah Dole"
