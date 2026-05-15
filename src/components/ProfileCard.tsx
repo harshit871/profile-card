@@ -28,16 +28,15 @@ const ProfileCard = () => {
           </span>
         </div>
         <div className="flex flex-col gap-6 self-stretch">
-          <button className="font-medium text-base text-white bg-indigo-700 px-4 py-2.5 rounded shadow-[0px_1px_2px_-1px_rgb(0_0_0_/_0.10),0px_1px_3px_0_rgb(0_0_0_/_0.10)] hover:bg-indigo-800 focus:ring focus:ring-indigo-100 disabled:cursor-not-allowed disabled:text-neutral-400 disabled:bg-neutral-100 disabled:shadow-none">
+          <button className="font-medium text-base text-white px-4 py-2.5 rounded shadow-[0px_1px_2px_-1px_rgb(0_0_0_/_0.10),0px_1px_3px_0_rgb(0_0_0_/_0.10)] bg-indigo-700 hover:bg-indigo-800 focus:ring focus:ring-indigo-100 disabled:cursor-not-allowed disabled:text-neutral-400 disabled:bg-neutral-100 disabled:shadow-none">
             Contact me
           </button>
 
-          <div className="flex justify-center gap-4 ">
-            <button>
+          <div className="flex justify-center gap-4">
+            <button className="w-9 h-9 flex justify-center items-center text-indigo-700 rounded hover:text-indigo-800 focus:ring focus:ring-indigo-100 disabled:cursor-not-allowed disabled:text-neutral-400">
               <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
+                className="w-5 h-5"
+                viewBox="8 8 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -48,11 +47,10 @@ const ProfileCard = () => {
               </svg>
             </button>
 
-            <button>
+            <button className="w-9 h-9 flex justify-center items-center text-indigo-700 rounded hover:text-indigo-800 focus:ring focus:ring-indigo-100 disabled:cursor-not-allowed disabled:text-neutral-400">
               <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
+                className="w-5 h-5"
+                viewBox="8 8 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -63,11 +61,10 @@ const ProfileCard = () => {
               </svg>
             </button>
 
-            <button>
+            <button className="w-9 h-9 flex justify-center items-center text-indigo-700 rounded hover:text-indigo-800 focus:ring focus:ring-indigo-100 disabled:cursor-not-allowed disabled:text-neutral-400">
               <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
+                className="w-5 h-5"
+                viewBox="8 8 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -78,11 +75,10 @@ const ProfileCard = () => {
               </svg>
             </button>
 
-            <button>
+            <button className="w-9 h-9 flex justify-center items-center text-indigo-700 rounded hover:text-indigo-800 focus:ring focus:ring-indigo-100 disabled:cursor-not-allowed disabled:text-neutral-400">
               <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
+                className="w-5 h-5"
+                viewBox="8 8 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
