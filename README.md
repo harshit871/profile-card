@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# Profile Card Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based implementation of a Profile Card, built as part of a front-end challenge. It features a responsive, beautifully designed user profile card with social media links.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework:** React 19 + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS (Vanilla CSS included via `css/style.css` for base styles)
+- **Icons:** Custom inline SVGs as React components
 
-## React Compiler
+## 🏗️ Project Architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The application has been modularized for clean architecture and reusability. Here is an overview of the component structure:
 
-## Expanding the ESLint configuration
+### `/src/components`
+- **`ProfileCard.tsx`**: The main container component that acts as the shell for the profile card. It composes the top and bottom sections.
+- **`TopProfileSection.tsx`**: Handles the user's avatar, name, title, and a brief bio description.
+- **`BottomProfileSection.tsx`**: Contains the interactive elements—a "Contact me" button and a flex row of social media links.
+- **`Credits.tsx`**: A small footer component acknowledging the original challenge creator and the developer.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### `/src/assets`
+- Contains individual `.tsx` React components for all SVGs (`GithubIcon`, `InstagramIcon`, `LinkedInIcon`, `XIcon`). 
+- **Why `.tsx` SVGs?** The SVG files were converted into inline React components rather than being imported as `<img src="..." />`. This allows the SVGs to seamlessly inherit CSS styles from their parent DOM nodes (such as Tailwind's `text-indigo-700` altering the `currentColor` and `w-5 h-5` correctly controlling dimensions and scaling).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### `/src/constants.ts`
+- Acts as the central source of truth for the social media link data. It maps names, URLs, accessibility labels (`aria-label`), and the associated SVG component icons, feeding directly into the `BottomProfileSection` array map.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 💻 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+To run this project locally on your machine, follow these steps:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Start the Development Server**
+   ```bash
+   npm run dev
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Build for Production**
+   ```bash
+   npm run build
+   ```
+
+## 🎨 Design Details
+
+- **Tailwind Utility Classes**: The project leverages Tailwind to structure the layout (`flex`, `gap-6`, `justify-center`), typography, and colors.
+- **SVG ViewBox Tricks**: Some SVGs use a specific inner ViewBox (e.g., `viewBox="8 8 20 20"`) paired with outer container sizing (`w-9 h-9`) so that the clickable target is large (36x36) but the visual icon renders at an exact 20x20 pixel ratio.
